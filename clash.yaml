@@ -63,12 +63,12 @@ Proxy:
  
 # Shadowsocks 配置范本
 # 第一种配置
-  name: "小姐姐"               # 软件显示的节点名字
-  type: ss                                  # 代理类型
-  server: 3.112.68.7                          # 服务器 IP
-  port: 8388                                 #  端口号
-  cipher: aes-256-cfb   # 加密方法
-  password: "password"                # SS 密码
+#  name: "小姐姐"               # 软件显示的节点名字
+#  type: ss                                  # 代理类型
+# server: 3.112.68.7                          # 服务器 IP
+#  port: 8388                                 #  端口号
+#  cipher: aes-256-cfb   # 加密方法
+#  password: "password"                # SS 密码
 #  # udp: true                                #默认不开启
   
 #第二种配置
@@ -118,23 +118,30 @@ Proxy:
 
 
 # 配置开始
-- name: "V2ray节点的主机测试"
-  type: vmess
-  server: v2rayssr.com
-  port: 443
-  uuid: 5b8098e0-c95d-4c74-b5d5-4a330969c8cb
-  alterId: 2
-  cipher: auto
-  tls: true
-  network: ws
-  ws-path: /v2rayssrcom/
-  Host: v2rayssr.com
+# - name: "V2ray节点的主机测试"
+#   type: vmess
+#   server: v2rayssr.com
+#   port: 443
+#   uuid: 5b8098e0-c95d-4c74-b5d5-4a330969c8cb
+#   alterId: 2
+#   cipher: auto
+#   tls: true
+#   network: ws
+#   ws-path: /v2rayssrcom/
+#   Host: v2rayssr.com
 
-- name: "Trojan节点的主机测试"
-  type: trojan
-  server: www.v2rayssr.com
-  port: 443
-  password: v2rayssr.com
+# - name: "Trojan节点的主机测试"
+#   type: trojan
+#   server: www.v2rayssr.com
+#   port: 443
+#   password: v2rayssr.com
+  
+- name: "ss"               # 软件显示的节点名字
+  type: ss                                  # 代理类型
+  server: 3.112.68.7                          # 服务器 IP
+  port: 8388                                 #  端口号
+  cipher: aes-256-cfb             # 加密方法
+  password: "password"                # SS 密码
 
  
 ###############################################################配置分割线
@@ -146,8 +153,7 @@ Proxy Group:
 - name: "自动节点选择"
   type: url-test
   proxies:
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "ss"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
@@ -156,8 +162,7 @@ Proxy Group:
   type: select
   proxies:
     - "自动节点选择"
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "ss"
 # 白名单模式 PROXY，黑名单模式 DIRECT
 - name: "Final"
   type: select
