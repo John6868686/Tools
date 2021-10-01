@@ -63,7 +63,7 @@ Proxy:
  
 # Shadowsocks 配置范本
 # 第一种配置
-- name: "小姐姐"               # 软件显示的节点名字
+  name: "小姐姐"               # 软件显示的节点名字
   type: ss                                  # 代理类型
   server: 3.112.68.7                          # 服务器 IP
   port: 8388                                 #  端口号
