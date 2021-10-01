@@ -63,12 +63,12 @@ Proxy:
  
 # Shadowsocks 配置范本
 # 第一种配置
-#- name: "你的SS节点1"               # 软件显示的节点名字
-#  type: ss                                  # 代理类型
-#  server: 1.2.4.8                          # 服务器 IP
-#  port: 443                                 #  端口号
-#  cipher: chacha20-ietf-poly1305   # 加密方法
-#  password: "password"                # SS 密码
+- name: "小姐姐"               # 软件显示的节点名字
+  type: ss                                  # 代理类型
+  server: 3.112.68.7                          # 服务器 IP
+  port: 8388                                 #  端口号
+  cipher: aes-256-cfb   # 加密方法
+  password: "password"                # SS 密码
 #  # udp: true                                #默认不开启
   
 #第二种配置
